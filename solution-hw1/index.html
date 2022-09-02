@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Change title, add icon, and stylesheet -->
   <head>
     <title>Bun Bun Bakeshop</title>
     <link rel="icon" type="image/x-icon" href="./assets/logo/logo-01.svg"/>
     <link rel="stylesheet" href="css/style.css"/>
   </head>
   
+  <!-- Navigation Bar -->
   <body>
     <div class="navigation-bar">
       <img src="./assets/logo/logo-01.svg" id="logo" alt="Logo of BunBun Bakeshop"/>
@@ -23,13 +25,14 @@
       </div>
     </div>
 
+    <!-- First set of three items -->
     <div class="itemized-row">
       <div class="item">
         <img src="./assets/products/original-cinnamon-roll.jpg" class="product" alt="Picture of Original Cinnamon Roll"/>
         <h3 class="product-name">
           Original Cinnamon Roll
         </h3>
-        <div class="glaze-option">
+        <div class="glaze-option"> <!-- Glaze row -->
           <p class="option-label">Glazing:</p>
           <select name="ocr">
             <option value="Keep Original">Keep Original</option>
@@ -38,7 +41,7 @@
             <option value="Double Chocolate">Double Chocolate</option>
           </select>
         </div>
-        <div class="pack-size-option">
+        <div class="pack-size-option"> <!-- Pack Size Row -->
           <p class="option-label">Pack Size:</p>
           <div class="radio-toolbar">
             <input type="radio" id=radio1inputocr name="radioCountocr" value="1" checked>
@@ -54,7 +57,7 @@
             <label for="radio12inputocr" class="radio12">12</label>
           </div>
         </div>
-        <div class="price-row">
+        <div class="price-row"> <!-- Price and Add to Cart Button Row -->
           <p class="price">$2.49</p>
           <button class="add-to-cart-button">Add to Cart</button>
         </div>
@@ -130,6 +133,8 @@
         </div>   
       </div>
     </div>
+
+    <!-- Second set of 3 items -->
     <div class="itemized-row">
       <div class="item">
         <img src="./assets/products/walnut-cinnamon-roll.jpg" class="product" alt="Picture of Walnut Cinnamon Roll"/>

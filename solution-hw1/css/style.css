@@ -1,3 +1,4 @@
+/* Navigation bar styling */
 .navigation-bar {
     height: 200px;
     margin-right: 0px;
@@ -36,6 +37,7 @@
     margin-left: auto;
 }
 
+/* Styling for when hovering over button */
 .navigation-button:hover {
     background-color: yellow;
     font-weight: bold;
@@ -62,6 +64,7 @@ img#logo {
     display: block;
 }
 
+/* Product related styling */
 img.product {
     height: auto;
     width: 300px;
@@ -182,6 +185,7 @@ select, .radio-toolbar {
     border-radius: 5px; 
 }
 
+/* Styling for when hovering over button */
 .add-to-cart-button:hover {
     background-color: yellow;
     font-weight: bold;

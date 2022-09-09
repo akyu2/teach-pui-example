@@ -1,11 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
-  <title>Page Title</title>
-  
-  <body>
+  <!-- Change title, add icon, and stylesheet -->
+  <head>
+    <title>Bun Bun Bakeshop</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo/logo-01.svg"/>
+    <link rel="stylesheet" href="css/style.css"/>
 
-    <h1>I am the solution to HW2!</h1>
+    <script defer src="js/app.js"></script>
+  </head>
+  
+  <!-- Navigation Bar -->
+  <body>
+    <div class="navigation-bar">
+      <img src="./assets/logo/logo-01.svg" id="logo" alt="Logo of BunBun Bakeshop"/>
+      <div class="navigation-right">
+        <div class="navigation-buttons">
+          <button class="navigation-button" id="product-nav">PRODUCTS</button>
+          <button class="navigation-button" id="cart-nav">CART</button>
+          <div class="cart-notification"></div>
+          <div class="total-cart">0 items<br>Total: $0.00</div>
+        </div>
+        <div>
+          <hr class="solid">
+        </div>
+        <div class="slogan">
+          Our hand-made cinnamon rolls
+        </div>
+      </div>
+    </div>
+
+    <!-- First set of three items -->
+    <div class="itemized-row">
+      <div class="item", id="original-cinnamon-roll">
+        <img src="./assets/products/original-cinnamon-roll.jpg" class="product" alt="Picture of Original Cinnamon Roll"/>
+        <h3 class="product-name">
+          Original Cinnamon Roll
+        </h3>
+        <div class="glaze-option"> <!-- Glaze row -->
+          <p class="option-label">Glazing:</p>
+          <select name="glazingSelection">
+            <option value="Keep Original">Keep Original</option>
+            <option value="Sugar Milk">Sugar Milk</option>
+            <option value="Vanilla Milk">Vanilla Milk</option>
+            <option value="Double Chocolate">Double Chocolate</option>
+          </select>
+        </div>
+        <div class="pack-size-option"> <!-- Pack Size Row -->
+          <p class="option-label">Pack Size:</p>
+          <div class="radio-toolbar">
+            <input type="radio" id=radio1inputocr name="radioCountocr" class="radioCount" value="1" checked>
+            <label for="radio1inputocr" class="radio1">1</label>
+        
+            <input type="radio" id=radio3inputocr name="radioCountocr" class="radioCount" value="3">
+            <label for="radio3inputocr" class="radio3">3</label>
+        
+            <input type="radio" id=radio6inputocr name="radioCountocr" class="radioCount" value="6">
+            <label for="radio6inputocr" class="radio6">6</label>
+
+            <input type="radio" id=radio12inputocr name="radioCountocr" class="radioCount" value="12">
+            <label for="radio12inputocr" class="radio12">12</label>
+          </div>
+        </div>
+        <div class="price-row"> <!-- Price and Add to Cart Button Row -->
+          <p class="price">$2.49</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item", id="apple-cinnamon-roll">
+        <img src="./assets/products/apple-cinnamon-roll.jpg" class="product" alt="Picture of Apple Cinnamon Roll"/>
+        <h3 class="product-name">
+          Apple Cinnamon Roll
+        </h3>
+        <div class="glaze-option">
+          <p class="option-label">Glazing:</p>
+          <select name="glazingSelection">
+            <option value="Keep Original">Keep Original</option>
+            <option value="Sugar Milk">Sugar Milk</option>
+            <option value="Vanilla Milk">Vanilla Milk</option>
+            <option value="Double Chocolate">Double Chocolate</option>
+          </select>
+        </div>
+        <div class="pack-size-option">
+          <p class="option-label">Pack Size:</p>
+          <div class="radio-toolbar">
+            <input type="radio" id=radio1inputacr name="radioCountacr" class="radioCount" value="1" checked>
+            <label for="radio1inputacr" class="radio1">1</label>
+        
+            <input type="radio" id=radio3inputacr name="radioCountacr" class="radioCount" value="3">
+            <label for="radio3inputacr" class="radio3">3</label>
+        
+            <input type="radio" id=radio6inputacr name="radioCountacr" class="radioCount" value="6">
+            <label for="radio6inputacr" class="radio6">6</label>
+
+            <input type="radio" id=radio12inputacr name="radioCountacr" class="radioCount" value="12">
+            <label for="radio12inputacr" class="radio12">12</label>
+          </div>
+        </div>
+        <div class="price-row">
+          <p class="price">$3.49</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item", id="raisin-cinnamon-roll">
+        <img src="./assets/products/raisin-cinnamon-roll.jpg" class="product" alt="Picture of Raisin Cinnamon Roll"/>
+        <h3 class="product-name">
+          Raisin Cinnamon Roll
+        </h3>  
+        <div class="glaze-option">
+          <p class="option-label">Glazing:</p>
+          <select name="glazingSelection">
+            <option value="Keep Original">Keep Original</option>
+            <option value="Sugar Milk">Sugar Milk</option>
+            <option value="Vanilla Milk">Vanilla Milk</option>
+            <option value="Double Chocolate">Double Chocolate</option>
+          </select>
+        </div>
+        <div class="pack-size-option">
+          <p class="option-label">Pack Size:</p>
+          <div class="radio-toolbar">
+            <input type="radio" id=radio1inputrcr name="radioCountrcr" class="radioCount" value="1" checked>
+            <label for="radio1inputrcr" class="radio1">1</label>
+        
+            <input type="radio" id=radio3inputrcr name="radioCountrcr" class="radioCount" value="3">
+            <label for="radio3inputrcr" class="radio3">3</label>
+        
+            <input type="radio" id=radio6inputrcr name="radioCountrcr" class="radioCount" value="6">
+            <label for="radio6inputrcr" class="radio6">6</label>
+
+            <input type="radio" id=radio12inputrcr name="radioCountrcr" class="radioCount" value="12">
+            <label for="radio12inputrcr" class="radio12">12</label>
+          </div>
+        </div> 
+        <div class="price-row">
+          <p class="price">$2.99</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>   
+      </div>
+    </div>
+
+    <!-- Second set of 3 items -->
+    <div class="itemized-row">
+      <div class="item", id="walnut-cinnamon-roll">
+        <img src="./assets/products/walnut-cinnamon-roll.jpg" class="product" alt="Picture of Walnut Cinnamon Roll"/>
+        <h3 class="product-name">
+          Walnut Cinnamon Roll
+        </h3>    
+        <div class="glaze-option">
+          <p class="option-label">Glazing:</p>
+          <select name="glazingSelection">
+            <option value="Keep Original">Keep Original</option>
+            <option value="Sugar Milk">Sugar Milk</option>
+            <option value="Vanilla Milk">Vanilla Milk</option>
+            <option value="Double Chocolate">Double Chocolate</option>
+          </select>
+        </div>
+        <div class="pack-size-option">
+          <p class="option-label">Pack Size:</p>
+          <div class="radio-toolbar">
+            <input type="radio" id=radio1inputwcr name="radioCountwcr" class="radioCount" value="1" checked>
+            <label for="radio1inputwcr" class="radio1">1</label>
+        
+            <input type="radio" id=radio3inputwcr name="radioCountwcr" class="radioCount" value="3">
+            <label for="radio3inputwcr" class="radio3">3</label>
+        
+            <input type="radio" id=radio6inputwcr name="radioCountwcr" class="radioCount" value="6">
+            <label for="radio6inputwcr" class="radio6">6</label>
+
+            <input type="radio" id=radio12inputwcr name="radioCountwcr" class="radioCount" value="12">
+            <label for="radio12inputwcr" class="radio12">12</label>
+          </div>
+        </div>  
+        <div class="price-row">
+          <p class="price">$3.49</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item", id="double-chocolate-cinnamon-roll">
+        <img src="./assets/products/double-chocolate-cinnamon-roll.jpg" class="product" alt="Picture of Double Chocolate Cinnamon Roll"/>
+        <h3 class="product-name">
+          Double-Chocolate Cinnamon Roll
+        </h3>     
+        <div class="glaze-option">
+          <p class="option-label">Glazing:</p>
+          <select name="glazingSelection">
+            <option value="Keep Original">Keep Original</option>
+            <option value="Sugar Milk">Sugar Milk</option>
+            <option value="Vanilla Milk">Vanilla Milk</option>
+            <option value="Double Chocolate">Double Chocolate</option>
+          </select>
+        </div>
+        <div class="pack-size-option">
+          <p class="option-label">Pack Size:</p>
+          <div class="radio-toolbar">
+            <input type="radio" id=radio1inputdccr name="radioCountdccr" class="radioCount" value="1" checked>
+            <label for="radio1inputdccr" class="radio1">1</label>
+        
+            <input type="radio" id=radio3inputdccr name="radioCountdccr" class="radioCount" value="3">
+            <label for="radio3inputdccr" class="radio3">3</label>
+        
+            <input type="radio" id=radio6inputdccr name="radioCountdccr" class="radioCount" value="6">
+            <label for="radio6inputdccr" class="radio6">6</label>
+
+            <input type="radio" id=radio12inputdccr name="radioCountdccr" class="radioCount" value="12">
+            <label for="radio12inputdccr" class="radio12">12</label>
+          </div>
+        </div> 
+        <div class="price-row">
+          <p class="price">$3.99</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item", id="strawberry-cinnamon-roll">
+        <img src="./assets/products/strawberry-cinnamon-roll.jpg" class="product" alt="Picture of Strawberry Cinnamon Roll"/>
+        <h3 class="product-name">
+          Strawberry Cinnamon Roll
+        </h3>
+        <div class="glaze-option">
+          <p class="option-label">Glazing:</p>
+          <select name="glazingSelection">
+            <option value="Keep Original">Keep Original</option>
+            <option value="Sugar Milk">Sugar Milk</option>
+            <option value="Vanilla Milk">Vanilla Milk</option>
+            <option value="Double Chocolate">Double Chocolate</option>
+          </select>
+        </div>
+        <div class="pack-size-option">
+          <p class="option-label">Pack Size:</p>
+          <div class="radio-toolbar">
+            <input type="radio" id=radio1inputscr name="radioCountscr" class="radioCount" value="1" checked>
+            <label for="radio1inputscr" class="radio1">1</label>
+        
+            <input type="radio" id=radio3inputscr name="radioCountscr" class="radioCount" value="3">
+            <label for="radio3inputscr" class="radio3">3</label>
+        
+            <input type="radio" id=radio6inputscr name="radioCountscr" class="radioCount" value="6">
+            <label for="radio6inputscr" class="radio6">6</label>
+
+            <input type="radio" id=radio12inputscr name="radioCountscr" class="radioCount" value="12">
+            <label for="radio12inputscr" class="radio12">12</label>
+          </div>
+        </div>
+        <div class="price-row">
+          <p class="price">$3.99</p>
+          <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>

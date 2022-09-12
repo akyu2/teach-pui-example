@@ -1,5 +1,5 @@
 # teach-pui-example
 
-HW1: https://awkyu.github.io/teach-pui-example/solution-hw1/
+HW1: https://awkyu.github.io/teach-pui-Alex-Kyu/solution-hw1/
 
-HW2: https://awkyu.github.io/teach-pui-example/solution-hw2/
+HW2: https://awkyu.github.io/teach-pui-Alex-Kyu/solution-hw2/

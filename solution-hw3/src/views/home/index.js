@@ -13,15 +13,15 @@ class Home extends Component {
             <NavBar />
         
             <div className="itemized-row">
-              <Item productName="Original Cinnamon Roll" imageSource="/pui-hw3-alex-kyu/assets/products/original-cinnamon-roll.jpg" price={2.49} glazingOptions={glazingOptions} />
-              <Item productName="Apple Cinnamon Roll" imageSource="/pui-hw3-alex-kyu/assets/products/apple-cinnamon-roll.jpg" price={3.49} glazingOptions={glazingOptions} />
-              <Item productName="Raisin Cinnamon Roll" imageSource="/pui-hw3-alex-kyu/assets/products/raisin-cinnamon-roll.jpg" price={2.99} glazingOptions={glazingOptions} />
+              <Item productName="Original Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/original-cinnamon-roll.jpg"} price={2.49} glazingOptions={glazingOptions} />
+              <Item productName="Apple Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/apple-cinnamon-roll.jpg"} price={3.49} glazingOptions={glazingOptions} />
+              <Item productName="Raisin Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/raisin-cinnamon-roll.jpg"} price={2.99} glazingOptions={glazingOptions} />
             </div>
         
             <div className="itemized-row">
-                <Item productName="Walnut Cinnamon Roll" imageSource="/pui-hw3-alex-kyu/assets/products/walnut-cinnamon-roll.jpg" price={3.49} glazingOptions={glazingOptions} />
-                <Item productName="Double Chocolate Cinnamon Roll" imageSource="/pui-hw3-alex-kyu/assets/products/double-chocolate-cinnamon-roll.jpg" price={3.99} glazingOptions={glazingOptions} />
-                <Item productName="Strawberry Cinnamon Roll" imageSource="/pui-hw3-alex-kyu/assets/products/strawberry-cinnamon-roll.jpg" price={3.99} glazingOptions={glazingOptions} />
+                <Item productName="Walnut Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/walnut-cinnamon-roll.jpg"} price={3.49} glazingOptions={glazingOptions} />
+                <Item productName="Double Chocolate Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/double-chocolate-cinnamon-roll.jpg"} price={3.99} glazingOptions={glazingOptions} />
+                <Item productName="Strawberry Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/strawberry-cinnamon-roll.jpg"} price={3.99} glazingOptions={glazingOptions} />
             </div>
         
         </div>

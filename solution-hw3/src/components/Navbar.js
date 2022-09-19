@@ -5,7 +5,7 @@ class NavBar extends Component {
     render() {
         return (
             <div className="navigation-bar">
-                <img src="/pui-hw3-alex-kyu/assets/logo/logo-01.svg" id="logo" alt="BunBun Bakeshop"/>
+                <img src={process.env.PUBLIC_URL + "/assets/logo/logo-01.svg"} id="logo" alt="BunBun Bakeshop"/>
                 <div className="navigation-right">
                     <div className="navigation-buttons">
                         <button className="navigation-button" id="product-nav">PRODUCTS</button>

@@ -3,7 +3,6 @@ img.product {
     height: auto;
     width: 300px;
     border: 5px solid black;
-    border-radius: 10px;
 }
 
 .item {
@@ -33,7 +32,7 @@ img.product {
 }
 
 /* radio-toolbar inspired by https://markheath.net/post/customize-radio-button-css */
-select, .radio-toolbar {
+.glazeSelection {
     width: 180px;
     height: 32px;
     margin-top: 10px;
@@ -43,8 +42,7 @@ select, .radio-toolbar {
   
 .radio-toolbar input[type="radio"] {
     opacity: 0;
-    position: fixed;
-    width: 0px;
+    width: 5px;
 }
 
 .radio-toolbar label {
@@ -54,36 +52,25 @@ select, .radio-toolbar {
     font-family: sans-serif, Arial;
     font-size: 16px;
     border: 2px solid black;
-    border-radius: 5px;
     width: 20px;
     text-align: center;
 }
 
-.radio1 {
-    margin-left: 0px;
-    margin-right: 5px;
-    flex-shrink: 0;
-    width: 20px;
-}
-
-.radio12 {
+.radio-toolbar {
+    justify-content: space-between;
+    width: 190px;
+    height: 32px;
+    margin-top: 10px;
     margin-right: 0px;
-    margin-left: 5px;
-    flex-shrink: 0;
-}
-
-.radio3, .radio6 {
-    margin-left: 5px;
-    margin-right: 5px;
-    flex-grow: 1;
+    margin-left: auto;
 }
 
 .radio-toolbar label:hover {
-    background-color: rgb(170, 170, 170);
+    background-color: rgb(231, 231, 231);
 }
 
 .radio-toolbar input[type="radio"]:checked + label {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(214, 214, 214);
     border-color: black;
 }
 
@@ -97,6 +84,7 @@ select, .radio-toolbar {
 
 .add-to-cart-button {
     color: black;
+    font-weight: bolder;
     padding: 5px 10px;
     text-align: center;
     font-size: 20px;
@@ -105,7 +93,6 @@ select, .radio-toolbar {
     margin-top: 10px;
     width: 180px;
     height: 40px;
-    border-radius: 5px; 
 }
 
 /* Styling for when hovering over button */

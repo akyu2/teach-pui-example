@@ -17,7 +17,7 @@ function Item({productName, imageSource, price, glazingOptions}) {
             </h3>
             <div className="glaze-option"> 
                 <p className="option-label">Glazing:</p>
-                <select name="glazingSelection">
+                <select class="glazeSelection" name="glazingSelection">
                     {glazingOptionList}
                 </select>
             </div>

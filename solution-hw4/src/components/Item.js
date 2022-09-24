@@ -15,23 +15,38 @@ const packPriceDict = {
     12: 10,
 }
 
+/**
+ * Item is a react component storing what a Roll is for this application
+ * 
+ * @param productName or type - the type of roll
+ * @param imageSource image link for the product
+ * @param price the base price of the item
+ * @param addItemHandler handler for what to do when hitting Add to Cart button
+ * @param glazingOptions object of glazing options and their corresponding modifiers to price
+ * @param packPriceAdaptation object of how pack size affects price 
+ * @returns Item Component for various rolls
+ */
 function Item({productName, imageSource, price, addItemHandler, glazingOptions=glazingOptionsList, packPriceAdaptation=packPriceDict}) {
-    const [finalPrice, setFinalPrice] = useState(price);
-    const [glaze, setGlaze] = useState(Object.keys(glazingOptions)[0]);
-    const [packSize, setPackSize] = useState(1)
+    const [finalPrice, setFinalPrice] = useState(price); // final price for the item
+    const [glaze, setGlaze] = useState(Object.keys(glazingOptions)[0]); // what type of glaze is currently selected
+    const [packSize, setPackSize] = useState(1) // what pack size is currently selected
 
+    // function to update the final price depending on packSize and glaze
     let updateFinalPrice = (glazeValue, packSizeValue) => {
         setFinalPrice(((parseFloat(glazeValue) + price)*packPriceAdaptation[parseInt(packSizeValue)]).toFixed(2))
     }
 
+    // handles changing glaze when selecting new glaze
     let handleGlazeChange = (e) => {
         setGlaze(e.target.value);
     }
 
+    // handles changing packSize var when radio buttons pushed
     let handlePackSizeChange = (e) => {
         setPackSize(e.target.value);
     }
 
+    // handler for when the Add to Cart Button is pressed, uses passed in addItemHandler from index.js
     let handleAddToCart = () => {
         addItemHandler({
             type: productName,
@@ -41,12 +56,15 @@ function Item({productName, imageSource, price, addItemHandler, glazingOptions=g
         });
     }
 
+    // Constantly update final price
     useEffect(() => {
         updateFinalPrice(glazingOptionsList[glaze], packSize);
     })
 
+    // idTag for unique id names for radio buttons
     let idTag = `${productName}`.replace(/\s+/g, '');
 
+    // load the glazingOptionList for rendering below
     let glazingOptionList = Object.keys(glazingOptions).map((glaze) => {
         return (<option key={`${glaze}`} value={`${glaze}`}>{glaze}</option>)
     });

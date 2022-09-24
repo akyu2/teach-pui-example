@@ -1,6 +1,15 @@
 import React from 'react';
 import './NavBar.css'
 
+/**
+ * NavBar component for BunBun bake shop
+ * 
+ * @param totalItems variable that stores total number of items bought
+ * @param totalPrice variable that stores total cost of all items in cart
+ * @param newlyAddedItem variable that stores most recently added item
+ * @param newlyAddedItemNotificationVisible variable for controlling visibility of added-item-notification
+ * @returns NavBar component
+ */
 function NavBar({ totalItems, totalPrice, newlyAddedItem, newlyAddedItemNotificationVisible }) {
     return (
         <div className="navigation-bar">

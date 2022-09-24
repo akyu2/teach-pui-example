@@ -4,21 +4,28 @@ import Item from "../../components/Item"
 
 import "./index.css"
 
+/**
+ * View for the home page
+ * 
+ * @returns Component for the Home View
+ */
 function Home() {
-
-  const [totalPrice, setTotalPrice] = useState(0.0);
-  const [newlyAddedItem, setNewlyAddedItem] = useState();
-  const [newlyAddedItemNotificationVisible, setNewlyAddedItemNotificationVisible] = useState(false);
-  const [totalItems, setTotalItems] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0.0); // variable for the total price
+  const [newlyAddedItem, setNewlyAddedItem] = useState(); // variable for storing the most recently added item
+  const [newlyAddedItemNotificationVisible, setNewlyAddedItemNotificationVisible] = useState(false); // variable for logic of visible/invisible notifications
+  const [totalItems, setTotalItems] = useState(0); // variables for storing total number of items in cart
+  const [itemList, setItemList] = useState([]); // variable for storing what items are in the cart
   
+  // function to handle newly added items to the cart
   let addItemHandler = (newItem) => {
     setTotalPrice(totalPrice + parseFloat(newItem.finalPrice));
     setNewlyAddedItem(newItem);
     setTotalItems(totalItems + 1);
+    setItemList(itemList.concat(newItem));
 
     setNewlyAddedItemNotificationVisible(true);
 
-    setTimeout(() => {
+    setTimeout(() => { // set notification to only show for 3 seconds
       setNewlyAddedItemNotificationVisible(false);
     }, 3000);
   }

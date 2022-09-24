@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/teach-pui-Alex-Kyu/solution-hw4/static/css/main.ee29ba25.css",
-    "main.js": "/teach-pui-Alex-Kyu/solution-hw4/static/js/main.9381d72d.js",
+    "main.css": "/teach-pui-Alex-Kyu/solution-hw4/static/css/main.640e2978.css",
+    "main.js": "/teach-pui-Alex-Kyu/solution-hw4/static/js/main.7b5bc57f.js",
     "static/js/787.b98310de.chunk.js": "/teach-pui-Alex-Kyu/solution-hw4/static/js/787.b98310de.chunk.js",
     "index.html": "/teach-pui-Alex-Kyu/solution-hw4/index.html",
-    "main.ee29ba25.css.map": "/teach-pui-Alex-Kyu/solution-hw4/static/css/main.ee29ba25.css.map",
-    "main.9381d72d.js.map": "/teach-pui-Alex-Kyu/solution-hw4/static/js/main.9381d72d.js.map",
+    "main.640e2978.css.map": "/teach-pui-Alex-Kyu/solution-hw4/static/css/main.640e2978.css.map",
+    "main.7b5bc57f.js.map": "/teach-pui-Alex-Kyu/solution-hw4/static/js/main.7b5bc57f.js.map",
     "787.b98310de.chunk.js.map": "/teach-pui-Alex-Kyu/solution-hw4/static/js/787.b98310de.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee29ba25.css",
-    "static/js/main.9381d72d.js"
+    "static/css/main.640e2978.css",
+    "static/js/main.7b5bc57f.js"
   ]
 }

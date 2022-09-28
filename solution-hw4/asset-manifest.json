@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/teach-pui-Alex-Kyu/solution-hw4/static/css/main.640e2978.css",
-    "main.js": "/teach-pui-Alex-Kyu/solution-hw4/static/js/main.de10ba0c.js",
+    "main.js": "/teach-pui-Alex-Kyu/solution-hw4/static/js/main.ad7e2ba2.js",
     "static/js/787.b98310de.chunk.js": "/teach-pui-Alex-Kyu/solution-hw4/static/js/787.b98310de.chunk.js",
     "index.html": "/teach-pui-Alex-Kyu/solution-hw4/index.html",
     "main.640e2978.css.map": "/teach-pui-Alex-Kyu/solution-hw4/static/css/main.640e2978.css.map",
-    "main.de10ba0c.js.map": "/teach-pui-Alex-Kyu/solution-hw4/static/js/main.de10ba0c.js.map",
+    "main.ad7e2ba2.js.map": "/teach-pui-Alex-Kyu/solution-hw4/static/js/main.ad7e2ba2.js.map",
     "787.b98310de.chunk.js.map": "/teach-pui-Alex-Kyu/solution-hw4/static/js/787.b98310de.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.640e2978.css",
-    "static/js/main.de10ba0c.js"
+    "static/js/main.ad7e2ba2.js"
   ]
 }

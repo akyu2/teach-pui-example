@@ -18,15 +18,14 @@ function NavBar({ totalItems, totalPrice, newlyAddedItem, newlyAddedItemNotifica
                 <div className="navigation-buttons">
                     <button className="navigation-button" id="product-nav">PRODUCTS</button>
                     <button className="navigation-button" id="cart-nav">CART</button>
-                    {newlyAddedItemNotificationVisible && 
+                    {newlyAddedItemNotificationVisible ? 
                         <div className="cart-notification">
                             Added to cart:<br/><br/>
                             <b>{newlyAddedItem.type}</b><br/>
                             {newlyAddedItem.glazing} Glazing<br/>
                             Pack of {newlyAddedItem.packSize}<br/>
                             Price: ${newlyAddedItem.finalPrice}
-                        </div>}
-                    {!newlyAddedItemNotificationVisible && 
+                        </div> : 
                         <div className="total-cart">
                             {totalItems} Items<br/>Total: ${totalPrice.toFixed(2)}
                         </div>}

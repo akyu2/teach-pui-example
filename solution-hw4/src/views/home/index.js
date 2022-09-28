@@ -13,6 +13,7 @@ function Home() {
   const [totalPrice, setTotalPrice] = useState(0.0); // variable for the total price
   const [newlyAddedItem, setNewlyAddedItem] = useState(); // variable for storing the most recently added item
   const [newlyAddedItemNotificationVisible, setNewlyAddedItemNotificationVisible] = useState(false); // variable for logic of visible/invisible notifications
+  const [newlyAddedItemNotificationTimeout, setNewlyAddedItemNotificationTimeout] = useState(); // variable for logic of visible/invisible notifications
   const [totalItems, setTotalItems] = useState(0); // variables for storing total number of items in cart
   const [itemList, setItemList] = useState([]); // variable for storing what items are in the cart
   
@@ -25,9 +26,10 @@ function Home() {
 
     setNewlyAddedItemNotificationVisible(true);
 
-    setTimeout(() => { // set notification to only show for 3 seconds
+    clearTimeout(newlyAddedItemNotificationTimeout); // clear previous timer, does nothing on intialization/first item added
+    setNewlyAddedItemNotificationTimeout(setTimeout(() => { // set notification to only show for 3 seconds
       setNewlyAddedItemNotificationVisible(false);
-    }, 3000);
+    }, 3000));
   }
 
   return (  

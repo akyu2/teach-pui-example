@@ -4,12 +4,15 @@ import Item from "../../components/Item"
 
 import "./index.css"
 
+import { rolls, rollsPerRow } from "../../data/rollsData"
+
+
 /**
  * View for the home page
  * 
  * @returns Component for the Home View
  */
-function Home() {
+function Home({ rollsList=rolls, numRollsPerRow=rollsPerRow }) {
   const [totalPrice, setTotalPrice] = useState(0.0); // variable for the total price
   const [newlyAddedItem, setNewlyAddedItem] = useState(); // variable for storing the most recently added item
   const [newlyAddedItemNotificationVisible, setNewlyAddedItemNotificationVisible] = useState(false); // variable for logic of visible/invisible notifications
@@ -32,22 +35,25 @@ function Home() {
     }, 3000));
   }
 
+  let productList = () => {
+    let rowList = []
+    for (let i = 0; i < rollsList.length; i+=numRollsPerRow) {
+      let rollsRow = rollsList.slice(i, i+numRollsPerRow);
+      rowList.push(
+        <div key={i} className="itemized-row">
+          {rollsRow.map((roll) => {
+            return (<Item key={roll.productName} productName={roll.productName} imageSource={process.env.PUBLIC_URL + roll.imageURL} price={roll.price} addItemHandler={addItemHandler} />)
+          })}
+        </div>
+      )
+    }
+    return rowList
+  };
+
   return (  
       <div>
           <NavBar totalItems={totalItems} totalPrice={totalPrice} newlyAddedItem={newlyAddedItem} newlyAddedItemNotificationVisible={newlyAddedItemNotificationVisible} />
-      
-          <div className="itemized-row">
-            <Item productName="Original Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/original-cinnamon-roll.jpg"} price={2.49} addItemHandler={addItemHandler} />
-            <Item productName="Apple Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/apple-cinnamon-roll.jpg"} price={3.49} addItemHandler={addItemHandler} />
-            <Item productName="Raisin Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/raisin-cinnamon-roll.jpg"} price={2.99} addItemHandler={addItemHandler} />
-          </div>
-      
-          <div className="itemized-row">
-              <Item productName="Walnut Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/walnut-cinnamon-roll.jpg"} price={3.49} addItemHandler={addItemHandler} />
-              <Item productName="Double Chocolate Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/double-chocolate-cinnamon-roll.jpg"} price={3.99} addItemHandler={addItemHandler} />
-              <Item productName="Strawberry Cinnamon Roll" imageSource={process.env.PUBLIC_URL + "/assets/products/strawberry-cinnamon-roll.jpg"} price={3.99} addItemHandler={addItemHandler} />
-          </div>
-      
+          {productList()}
       </div>
       
   );

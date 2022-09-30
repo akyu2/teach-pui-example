@@ -1,19 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Item.css'
 
-const glazingOptionsList = {
-    "Keep Original": 0.0,
-    "Sugar Milk": 0.00,
-    "Vanilla Milk": 0.50,
-    "Double Chocolate": 1.50,
-}
+import { glazingOptionsList } from '../data/glazeData';
+import { packPriceDict } from '../data/packPriceData';
 
-const packPriceDict = {
-    1: 1,
-    3: 3,
-    6: 5,
-    12: 10,
-}
 
 /**
  * Item is a react component storing what a Roll is for this application

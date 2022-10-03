@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import NavBar from "../../components/Navbar";
-import Item from "../../components/Item"
+import NavBar from "../../components/NavBar/Navbar";
+import Item from "../../components/Item/Item"
+import Cart from "../../components/Cart/Cart"
 
 import "./index.css"
 
@@ -19,7 +20,9 @@ function Home({ rollsList=rolls, numRollsPerRow=rollsPerRow }) {
   const [newlyAddedItemNotificationTimeout, setNewlyAddedItemNotificationTimeout] = useState(); // variable for logic of visible/invisible notifications
   const [totalItems, setTotalItems] = useState(0); // variables for storing total number of items in cart
   const [itemList, setItemList] = useState([]); // variable for storing what items are in the cart
-  
+  const [cartVisible, setCartVisible] = useState(false); // variable for logic of whether the cart is visible or not
+
+
   // function to handle newly added items to the cart
   let addItemHandler = (newItem) => {
     setTotalPrice(totalPrice + parseFloat(newItem.finalPrice));
@@ -33,6 +36,17 @@ function Home({ rollsList=rolls, numRollsPerRow=rollsPerRow }) {
     setNewlyAddedItemNotificationTimeout(setTimeout(() => { // set notification to only show for 3 seconds
       setNewlyAddedItemNotificationVisible(false);
     }, 3000));
+  }
+
+  let removeItemHandler = (index) => {
+    if (totalItems-1 == 0) {
+      setTotalPrice(0);
+    } else {
+      setTotalPrice(totalPrice - parseFloat(itemList[index].finalPrice));
+    }
+    setTotalItems(totalItems - 1);
+    itemList.splice(index, 1);
+    setItemList(itemList);
   }
 
   let productList = () => {
@@ -52,7 +66,12 @@ function Home({ rollsList=rolls, numRollsPerRow=rollsPerRow }) {
 
   return (  
       <div>
-          <NavBar totalItems={totalItems} totalPrice={totalPrice} newlyAddedItem={newlyAddedItem} newlyAddedItemNotificationVisible={newlyAddedItemNotificationVisible} />
+          <NavBar totalItems={totalItems} totalPrice={totalPrice} newlyAddedItem={newlyAddedItem} newlyAddedItemNotificationVisible={newlyAddedItemNotificationVisible} setCartVisible={setCartVisible} cartVisible={cartVisible} />
+          {cartVisible ? 
+          <Cart itemArray={itemList} totalItems={totalItems} totalPrice={totalPrice} removeItemHandler={removeItemHandler} /> : 
+          <div></div>
+          }
+
           {productList()}
       </div>
       

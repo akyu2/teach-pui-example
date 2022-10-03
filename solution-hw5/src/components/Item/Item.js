@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Item.css'
 
-import { glazingOptionsList } from '../data/glazeData';
-import { packPriceDict } from '../data/packPriceData';
+import { glazingOptionsList } from '../../data/glazeData';
+import { packPriceDict } from '../../data/packPriceData';
 
 
 /**
@@ -43,6 +43,7 @@ function Item({productName, imageSource, price, addItemHandler, glazingOptions=g
             glazing: glaze,
             packSize: packSize,
             finalPrice: finalPrice,
+            imageSource: imageSource,
         });
     }
 

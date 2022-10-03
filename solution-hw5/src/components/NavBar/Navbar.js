@@ -10,14 +10,18 @@ import './NavBar.css'
  * @param newlyAddedItemNotificationVisible variable for controlling visibility of added-item-notification
  * @returns NavBar component
  */
-function NavBar({ totalItems, totalPrice, newlyAddedItem, newlyAddedItemNotificationVisible }) {
+function NavBar({ totalItems, totalPrice, newlyAddedItem, newlyAddedItemNotificationVisible, setCartVisible, cartVisible }) {
+    let handleCartButton = () => {
+        setCartVisible(!cartVisible);
+    }
+    
     return (
         <div className="navigation-bar">
             <img src={process.env.PUBLIC_URL + "/assets/logo/logo-01.svg"} id="logo" alt="BunBun Bakeshop"/>
             <div className="navigation-right">
                 <div className="navigation-buttons">
                     <button className="navigation-button" id="product-nav">PRODUCTS</button>
-                    <button className="navigation-button" id="cart-nav">CART</button>
+                    <button className="navigation-button" id="cart-nav" onClick={handleCartButton}>CART</button>
                     {newlyAddedItemNotificationVisible ? 
                         <div className="cart-notification">
                             Added to cart:<br/><br/>

@@ -121,13 +121,22 @@ function Home({ rollsList=rolls, numRollsPerRow=rollsPerRow }) {
   // Styling END =============================================================================
 
   // rendering of the products/rolls shown based on what should be visible
-  let visibleProductList = (
-    <div className="itemized-row">
-      {visibleRolls.map((roll) => {
-        return (<Item key={roll.productName} productName={roll.productName} imageSource={process.env.PUBLIC_URL + roll.imageURL} price={roll.price} addItemHandler={addItemHandler} />)
-      })}
-    </div>
-  )
+  let productList = () => {
+    let rowList = [];
+    for (let i = 0; i < visibleRolls.length; i+=numRollsPerRow) {
+      let rollsRow = visibleRolls.slice(i, i+numRollsPerRow);
+      rowList.push(
+        <div key={i} className="itemized-row">
+          {rollsRow.map((roll) => {
+            return (<Item key={roll.productName} productName={roll.productName} imageSource={process.env.PUBLIC_URL + roll.imageURL} price={roll.price} addItemHandler={addItemHandler} />)
+          })}
+        </div>
+      )
+    }
+    return rowList
+  };
+
+  let visibleProductList = productList();
 
   return (  
       <div>

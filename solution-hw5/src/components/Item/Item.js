@@ -63,34 +63,36 @@ function Item({productName, imageSource, price, addItemHandler, glazingOptions=g
     return (
         <div className="item">
             <img src={imageSource} className="product" alt={productName}/>
-            <h3 className="product-name">
-                {productName}
-            </h3>
-            <div className="glaze-option"> 
-                <p className="option-label">Glazing:</p>
-                <select className="glazeSelection" name="glazingSelection" value={glaze} onChange={handleGlazeChange} >
-                    {glazingOptionList}
-                </select>
-            </div>
-            <div className="pack-size-option">
-                <p className="option-label">Pack Size:</p>
-                <div className="radio-toolbar" onChange={handlePackSizeChange}>
-                    <input type="radio" id={"radio1Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={1} defaultChecked />
-                    <label htmlFor={"radio1Input" + idTag} className="radio1">1</label>
-                
-                    <input type="radio" id={"radio3Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={3} />
-                    <label htmlFor={"radio3Input" + idTag} className="radio3">3</label>
-                
-                    <input type="radio" id={"radio6Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={6} />
-                    <label htmlFor={"radio6Input" + idTag} className="radio6">6</label>
-        
-                    <input type="radio" id={"radio12Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={12} />
-                    <label htmlFor={"radio12Input" + idTag} className="radio12">12</label>
+            <div className="product-details">
+                <h3 className="product-name">
+                    {productName}
+                </h3>
+                <div className="glaze-option"> 
+                    <p className="option-label">Glazing:</p>
+                    <select className="glazeSelection" name="glazingSelection" value={glaze} onChange={handleGlazeChange} >
+                        {glazingOptionList}
+                    </select>
                 </div>
-            </div>
-            <div className="price-row">
-                <p className="price">{`$ ${finalPrice}`}</p>
-                <button className="add-to-cart-button" onClick={handleAddToCart} >Add to Cart</button>
+                <div className="pack-size-option">
+                    <p className="option-label">Pack Size:</p>
+                    <div className="radio-toolbar" onChange={handlePackSizeChange}>
+                        <input type="radio" id={"radio1Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={1} defaultChecked />
+                        <label htmlFor={"radio1Input" + idTag} className="radio1">1</label>
+                    
+                        <input type="radio" id={"radio3Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={3} />
+                        <label htmlFor={"radio3Input" + idTag} className="radio3">3</label>
+                    
+                        <input type="radio" id={"radio6Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={6} />
+                        <label htmlFor={"radio6Input" + idTag} className="radio6">6</label>
+            
+                        <input type="radio" id={"radio12Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={12} />
+                        <label htmlFor={"radio12Input" + idTag} className="radio12">12</label>
+                    </div>
+                </div>
+                <div className="price-row">
+                    <p className="price">{`$ ${finalPrice}`}</p>
+                    <button className="add-to-cart-button" onClick={handleAddToCart} >Add to Cart</button>
+                </div>
             </div>
         </div>
     );

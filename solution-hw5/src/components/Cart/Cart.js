@@ -1,18 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 
+/**
+ * Cart Component for Bun Bun Bakeshop
+ * 
+ * @param itemArray variable with all of the items in the cart
+ * @param totalItems variable with the number of total items
+ * @param totalPrice variable with the total price of all items in the cart
+ * @param removeItemHandler handler function to handle removing an item
+ * @returns Cart Component
+ */
 function Cart({ itemArray, totalItems, totalPrice, removeItemHandler }) {
+    // Function to handle the remove button for each cart item
+    let handleRemove = (e) => {
+        let removeIndex = parseInt(e.target.getAttribute("a-key"));
+        removeItemHandler(removeIndex);
+    }
 
+    // Styles ==============================================================================
     const parentDivStyle = {
         width: "auto",
         marginTop: "0px",
-
-        // backgroundColor: "black",
-
     }
 
     const dividerLineStyle = {
-        borderTop: "10px solid brown",
+        borderTop: "10px solid #635301",
         marginTop: "60px",
         marginRight: "30px",
         marginLeft: "30px"
@@ -21,9 +33,8 @@ function Cart({ itemArray, totalItems, totalPrice, removeItemHandler }) {
     const cartSummaryBoxStyle = {
         display: "flex",
         justifyContent: "space-between",
-        // alignItems: "start",
-        marginLeft: "5%",
-        marginRight: "5%",
+        marginLeft: "8.5%",
+        marginRight: "8.5%",
         marginBottom: "20px"
     }
 
@@ -34,8 +45,8 @@ function Cart({ itemArray, totalItems, totalPrice, removeItemHandler }) {
     const cartListStyle = {
         display: "flex",
         justifyContent: "flex-start",
-        marginLeft: "5%",
-        marginRight: "5%",
+        marginLeft: "8.5%",
+        marginRight: "8.5%",
         minHeight: "350px",
         flexWrap: "wrap"
     }
@@ -62,12 +73,10 @@ function Cart({ itemArray, totalItems, totalPrice, removeItemHandler }) {
         textDecoration: "underline",
         fontSize: "15px"
     }
+    // Styles END ==============================================================================
 
-    let handleRemove = (e) => {
-        let removeIndex = parseInt(e.target.getAttribute("a-key"));
-        removeItemHandler(removeIndex);
-    }
 
+    // Rendering of the list of items in the cart
     let cartList = itemArray.map((item, index) => {
         return (<div style={cartItemStyle} key={index}>
                     <div>
@@ -89,8 +98,6 @@ function Cart({ itemArray, totalItems, totalPrice, removeItemHandler }) {
                 </div>)
     });
 
-
-
     return (
         <div style={parentDivStyle} >
             <hr style={dividerLineStyle} />
@@ -103,18 +110,6 @@ function Cart({ itemArray, totalItems, totalPrice, removeItemHandler }) {
                     </div>
                 </div>
                 <div style={cartListStyle}>
-                    {/* <div style={cartItemStyle}>
-                        <div>
-                            <img src={process.env.PUBLIC_URL + "/assets/products/original-cinnamon-roll.jpg"} alt={"Original Cinnamon Roll"} style={cartImageStyle} />
-                        </div>
-                        Original Cinnamon Roll
-                    </div>
-                    <div style={cartItemStyle}>
-                        <div>
-                            <img src={process.env.PUBLIC_URL + "/assets/products/original-cinnamon-roll.jpg"} alt={"Original Cinnamon Roll"} style={cartImageStyle}/>
-                        </div>
-                        Original Cinnamon Roll
-                    </div> */}
                     {cartList}
                 </div>
             <hr style={dividerLineStyle} />

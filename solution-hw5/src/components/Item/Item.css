@@ -6,7 +6,12 @@ img.product {
 }
 
 .item {
-    margin: 0px auto 0px auto;
+    margin-bottom: 50px;
+    /* flex: 1 0 33%; */
+}
+
+.product-details {
+    width: 300px;
 }
 
 .product-name {

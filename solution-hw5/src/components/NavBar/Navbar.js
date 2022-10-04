@@ -15,6 +15,10 @@ function NavBar({ totalItems, totalPrice, newlyAddedItem, newlyAddedItemNotifica
         setCartVisible(!cartVisible);
     }
     
+    const maintainHeightStyle = {
+        height: "42px"
+    }
+
     return (
         <div className="navigation-bar">
             <img src={process.env.PUBLIC_URL + "/assets/logo/logo-01.svg"} id="logo" alt="BunBun Bakeshop"/>
@@ -22,7 +26,8 @@ function NavBar({ totalItems, totalPrice, newlyAddedItem, newlyAddedItemNotifica
                 <div className="navigation-buttons">
                     <button className="navigation-button" id="product-nav">PRODUCTS</button>
                     <button className="navigation-button" id="cart-nav" onClick={handleCartButton}>CART</button>
-                    {newlyAddedItemNotificationVisible ? 
+                </div>
+                {newlyAddedItemNotificationVisible ? 
                         <div className="cart-notification">
                             Added to cart:<br/><br/>
                             <b>{newlyAddedItem.type}</b><br/>
@@ -33,7 +38,9 @@ function NavBar({ totalItems, totalPrice, newlyAddedItem, newlyAddedItemNotifica
                         <div className="total-cart">
                             {totalItems} Items<br/>Total: ${totalPrice.toFixed(2)}
                         </div>}
-                </div>
+                {newlyAddedItemNotificationVisible ?
+                    <div style={maintainHeightStyle}>
+                    </div> : null }
                 <div>
                     <hr className="solid" />
                 </div>

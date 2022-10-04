@@ -49,11 +49,14 @@
 }
 
 .total-cart {
-    position: absolute;
+    /* position: absolute; */
     width: 300px;
     text-align: right;
     top: 60px;
-    right: 135px;
+    /* right: 30px; */
+    margin-right: 110px;
+    margin-top: 10px;
+    margin-left: auto;
 }
 
 /* Styling for when hovering over button */
@@ -65,7 +68,7 @@
 .solid {
     border-top: 8px solid black;
     border-radius: 5px;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .slogan {

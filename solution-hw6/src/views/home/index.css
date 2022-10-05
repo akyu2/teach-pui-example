@@ -1,0 +1,7 @@
+.itemized-row {
+    display: flex;
+    margin-left: 8.5%;
+    margin-right: 8.5%;
+    margin-top: 50px;
+    justify-content: space-between;
+}

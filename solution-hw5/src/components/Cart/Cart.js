@@ -73,6 +73,21 @@ function Cart({ itemArray, totalItems, totalPrice, removeItemHandler }) {
         textDecoration: "underline",
         fontSize: "15px"
     }
+
+    const emptyCartStyle = {
+        justifyContent: "center",
+        marginLeft: "8.5%",
+        marginRight: "8.5%",
+        minHeight: "350px",
+    }
+
+    const emptyCartTextStyle = {
+        textAlign: "center",
+        fontSize: "20px",
+        marginLeft: "8.5%",
+        marginRight: "8.5%",
+        paddingTop: "100px"
+    }
     // Styles END ==============================================================================
 
 
@@ -109,9 +124,16 @@ function Cart({ itemArray, totalItems, totalPrice, removeItemHandler }) {
                         {`Total: $ ${parseFloat(totalPrice).toFixed(2)}`}
                     </div>
                 </div>
-                <div style={cartListStyle}>
-                    {cartList}
-                </div>
+                {totalItems ? 
+                    <div style={cartListStyle}>
+                        {cartList}
+                    </div> :
+                    <div style={emptyCartStyle} >
+                        <div style={emptyCartTextStyle} >
+                            The cart is empty!
+                        </div>
+                    </div>
+                }
             <hr style={dividerLineStyle} />
         </div>
     );

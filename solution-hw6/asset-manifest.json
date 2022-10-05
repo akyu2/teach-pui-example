@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/teach-pui-Alex-Kyu/solution-hw6/static/css/main.b34e079f.css",
+    "main.js": "/teach-pui-Alex-Kyu/solution-hw6/static/js/main.09715bf2.js",
+    "static/js/787.ce7453ae.chunk.js": "/teach-pui-Alex-Kyu/solution-hw6/static/js/787.ce7453ae.chunk.js",
+    "index.html": "/teach-pui-Alex-Kyu/solution-hw6/index.html",
+    "main.b34e079f.css.map": "/teach-pui-Alex-Kyu/solution-hw6/static/css/main.b34e079f.css.map",
+    "main.09715bf2.js.map": "/teach-pui-Alex-Kyu/solution-hw6/static/js/main.09715bf2.js.map",
+    "787.ce7453ae.chunk.js.map": "/teach-pui-Alex-Kyu/solution-hw6/static/js/787.ce7453ae.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b34e079f.css",
+    "static/js/main.09715bf2.js"
+  ]
+}

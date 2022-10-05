@@ -9,6 +9,7 @@ const useLocalStorage = (storageKey, fallbackState) => {
 
     useEffect(() => {
         localStorage.setItem(storageKey, JSON.stringify(value));
+        console.log(storageKey, localStorage.getItem(storageKey)); // comment out later, but keep for hw6
     }, [value, storageKey]);
 
     return [value, setValue];

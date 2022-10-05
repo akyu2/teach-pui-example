@@ -6,7 +6,7 @@ import Cart from "../../components/Cart/Cart"
 import "./index.css"
 
 import { rolls, rollsPerRow } from "../../data/rollsData"
-
+import useLocalStorage from '../../backend/helperFunctions';
 
 /**
  * View for the home page
@@ -14,12 +14,12 @@ import { rolls, rollsPerRow } from "../../data/rollsData"
  * @returns Component for the Home View
  */
 function Home({ rollsList=rolls, numRollsPerRow=rollsPerRow }) {
-  const [totalPrice, setTotalPrice] = useState(0.0); // variable for the total price
-  const [newlyAddedItem, setNewlyAddedItem] = useState(); // variable for storing the most recently added item
+  const [totalPrice, setTotalPrice] = useLocalStorage("totalPrice", 0.0); // variable for the total price
+  const [newlyAddedItem, setNewlyAddedItem] = useState(); // variable for storing the most recently added item for popup
   const [newlyAddedItemNotificationVisible, setNewlyAddedItemNotificationVisible] = useState(false); // variable for logic of visible/invisible notifications
   const [newlyAddedItemNotificationTimeout, setNewlyAddedItemNotificationTimeout] = useState(); // variable for logic of visible/invisible notifications
-  const [totalItems, setTotalItems] = useState(0); // variables for storing total number of items in cart
-  const [itemList, setItemList] = useState([]); // variable for storing what items are in the cart
+  const [totalItems, setTotalItems] = useLocalStorage("totalItems", 0); // variables for storing total number of items in cart
+  const [itemList, setItemList] = useLocalStorage("cartList", []); // variable for storing what items are in the cart
   const [cartVisible, setCartVisible] = useState(false); // variable for logic of whether the cart is visible or not
   const [searchValue, setSearchValue] = useState(""); // variable for search bar value
   const [searchQuery, setSearchQuery] = useState(null); // variable for final search query to filter by
@@ -45,14 +45,16 @@ function Home({ rollsList=rolls, numRollsPerRow=rollsPerRow }) {
 
   // handler to remove items from shopping cart
   let removeItemHandler = (index) => {
-    if (totalItems-1 === 0) {
-      setTotalPrice(0);
+    if (totalItems-1 === 0 || totalItems < 0) {
+      setTotalPrice(0.00);
+      setTotalItems(0);
     } else {
       setTotalPrice(totalPrice - parseFloat(itemList[index].finalPrice));
     }
     setTotalItems(totalItems - 1);
-    itemList.splice(index, 1);
-    setItemList(itemList);
+    let newItemList = [...itemList]; // shallow copy works for this case
+    newItemList.splice(index, 1);
+    setItemList(newItemList);
   }
 
   // handles continuous updates to search bar value

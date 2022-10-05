@@ -52,6 +52,15 @@ function Item({productName, imageSource, price, addItemHandler, glazingOptions=g
         updateFinalPrice(glazingOptionsList[glaze], packSize);
     })
 
+    // conditional styling variables for Pack Size Radio Buttons
+    let packSizeButtonStyleUnselected = {
+        backgroundColor: "#ffffff"
+    }
+
+    let packSizeButtonStyleSelected = {
+        backgroundColor: "#bdbdbd"
+    }
+
     // idTag for unique id names for radio buttons
     let idTag = `${productName}`.replace(/\s+/g, '');
 
@@ -77,16 +86,16 @@ function Item({productName, imageSource, price, addItemHandler, glazingOptions=g
                     <p className="option-label">Pack Size:</p>
                     <div className="radio-toolbar" onChange={handlePackSizeChange}>
                         <input type="radio" id={"radio1Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={1} defaultChecked />
-                        <label htmlFor={"radio1Input" + idTag} className="radio1">1</label>
-                    
+                        <label style={parseInt(packSize)===1 ? packSizeButtonStyleSelected : packSizeButtonStyleUnselected} htmlFor={"radio1Input" + idTag} className="radio1">1</label>
+
                         <input type="radio" id={"radio3Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={3} />
-                        <label htmlFor={"radio3Input" + idTag} className="radio3">3</label>
+                        <label style={parseInt(packSize)===3 ? packSizeButtonStyleSelected : packSizeButtonStyleUnselected} htmlFor={"radio3Input" + idTag} className="radio3">3</label>
                     
                         <input type="radio" id={"radio6Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={6} />
-                        <label htmlFor={"radio6Input" + idTag} className="radio6">6</label>
+                        <label style={parseInt(packSize)===6 ? packSizeButtonStyleSelected : packSizeButtonStyleUnselected} htmlFor={"radio6Input" + idTag} className="radio6">6</label>
             
                         <input type="radio" id={"radio12Input" + idTag} name={"radioCount" + idTag} className="radioCount" value={12} />
-                        <label htmlFor={"radio12Input" + idTag} className="radio12">12</label>
+                        <label style={parseInt(packSize)===12 ? packSizeButtonStyleSelected : packSizeButtonStyleUnselected} htmlFor={"radio12Input" + idTag} className="radio12">12</label>
                     </div>
                 </div>
                 <div className="price-row">

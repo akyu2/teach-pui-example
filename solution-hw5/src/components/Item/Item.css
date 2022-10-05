@@ -69,15 +69,6 @@ img.product {
     margin-left: auto;
 }
 
-.radio-toolbar label:hover {
-    background-color: rgb(231, 231, 231);
-}
-
-.radio-toolbar input[type="radio"]:checked + label {
-    background-color: rgb(214, 214, 214);
-    border-color: black;
-}
-
 .price {
     font-family: sans-serif, Arial;
     font-size: 20px;
